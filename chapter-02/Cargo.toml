@@ -1,0 +1,23 @@
+[package]
+name = "chapter-02"
+version = "0.1.0"
+edition = "2021"
+
+[workspace]
+members = [
+  "rs-api",
+  "rs-practice",
+]
+
+[dependencies]
+
+[workspace.dependencies]
+actix-web = "4.0"
+actix-service = "2.0"  # 添加 actix-service 依赖
+bcrypt = "0.15.1"
+futures = "0.3"  # 添加 futures 依赖
+futures-util = "0.3"
+serde = { version = "1.0", features = ["derive"] }
+tracing = "0.1"
+tracing-actix-web = "0.5"
+tracing-subscriber = "0.3"
