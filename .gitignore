@@ -1,0 +1,27 @@
+# 编译生成的文件
+/target/
+
+# 构建工具生成的文件
+**/*.rs.bk
+
+# Cargo.lock 文件应根据项目的具体需求来决定是否忽略
+# 如果你在构建库（library），通常会忽略 Cargo.lock
+# 如果你在构建应用程序（application），通常会提交 Cargo.lock
+# /Cargo.lock
+
+# 包含个人敏感信息的文件
+/secret/
+
+# 编辑器和 IDE 生成的文件
+/.idea/
+/.vscode/
+/*.swp
+*.swo
+*.DS_Store
+*.log
+
+# Rust 文档
+/target/doc/
+
+# 包含临时文件
+/tmp/
