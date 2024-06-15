@@ -20,8 +20,8 @@ where
 {
     type Response = ServiceResponse;
     type Error = Error;
-    type InitError = ();
     type Transform = ResponseMiddlewareMiddleware<S>;
+    type InitError = ();
     type Future = Ready<Result<Self::Transform, Self::InitError>>;
 
     fn new_transform(&self, service: S) -> Self::Future {

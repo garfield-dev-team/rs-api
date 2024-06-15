@@ -36,8 +36,8 @@ async fn main() -> std::io::Result<()> {
             .wrap(LoggingMiddleware)
             .route("/", web::get().to(index))
             .route("/hello", web::get().to(hello))
-            .route("/register", web::get().to(register))
-            .route("/login", web::get().to(login))
+            .service(register)
+            .service(login)
     })
     .bind("127.0.0.1:8080")?
     .run()
