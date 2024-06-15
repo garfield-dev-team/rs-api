@@ -8,6 +8,7 @@ use response::{common::BaseResponse, exception::ServerError};
 use tracing::Level;
 use tracing_actix_web::TracingLogger;
 use tracing_subscriber;
+use crate::handler::user::create_user;
 
 mod handler;
 mod middleware;
@@ -38,6 +39,7 @@ async fn main() -> std::io::Result<()> {
             .route("/hello", web::get().to(hello))
             .service(register)
             .service(login)
+            .service(create_user)
     })
     .bind("127.0.0.1:8080")?
     .run()

@@ -9,6 +9,16 @@ use crate::{
 
 #[actix_web::post("/register")]
 pub async fn register(user: web::Json<UserRequest>) -> Result<impl Responder, ServerError> {
+    if user.username.is_empty() {
+        return Err(ServerError::BadRequest(
+            "Username cannot be empty".to_string(),
+        ));
+    }
+    if user.password.is_empty() {
+        return Err(ServerError::BadRequest(
+            "Password cannot be empty".to_string(),
+        ));
+    }
     match hash_password(&user.password) {
         Ok(hashed_password) => {
             // 在实际应用中，你应该将用户名和哈希密码存储在数据库中

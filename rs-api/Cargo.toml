@@ -15,3 +15,5 @@ tracing-actix-web.workspace = true
 tracing-subscriber.workspace = true
 thiserror.workspace = true
 anyhow.workspace = true
+validator.workspace = true
+validator_derive.workspace = true
